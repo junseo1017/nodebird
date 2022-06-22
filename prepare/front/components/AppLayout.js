@@ -6,6 +6,22 @@ import UserProfile from './UserProfile';
 import LoginForm from './LoginForm';
 import styled from 'styled-components';
 import {useSelector} from 'react-redux';
+import {createGlobalStyle} from 'styled-components';
+
+const Global = createGlobalStyle`
+.ant-row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.ant-col:first-child {
+  padding-left: 0 !important
+}
+
+.ant-col:last-child {
+  padding-right: 0 !important
+}
+`;
 
 const SearchInput = styled(Input.Search)`
   vertical-align: 'middle';
@@ -46,6 +62,7 @@ const AppLayout = ({children}) => {
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
   return (
     <div>
+      <Global />
       <Menu mode='horizontal' items={items} />
       <Row gutter={8}>
         <Col xs={24} md={6}>
