@@ -46,7 +46,7 @@ const AppLayout = ({children}) => {
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
   return (
     <div>
-      <Menu mode='horizontal' items={items} />;
+      <Menu mode='horizontal' items={items} />
       <Row gutter={8}>
         <Col xs={24} md={6}>
           {isLoggedIn ? <UserProfile /> : <LoginForm />}

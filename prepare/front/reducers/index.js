@@ -6,7 +6,7 @@ import {combineReducers} from 'redux';
 const rootReducer = combineReducers({
   index: (state = {}, action) => {
     switch (action.type) {
-      case HYDRATE:
+      case HYDRATE: // ssr을 위해 추가함.
         return {...state, ...action.payload};
       default:
         return state;
