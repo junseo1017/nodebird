@@ -1,24 +1,7 @@
 import React, {useState, useCallback} from 'react';
 import {PlusOutlined} from '@ant-design/icons';
 import ImagesZoom from './ImagesZoom';
-import styled from 'styled-components';
 
-const Overlay = styled.div`
-  position: fixed;
-  z-index: 5000;
-  top: 0;
-  left: 0;
-  rigth: 0;
-  bottom: 0;
-`;
-
-const Header = styled.header`
-  header: 44px;
-  background: white;
-  position: relative;
-  padding: 0;
-  text-align: center;
-`;
 
 const PostImages = ({images}) => {
   const [showImagesZoom, setShowImagesZoom] = useState(false);

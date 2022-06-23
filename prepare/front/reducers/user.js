@@ -12,6 +12,7 @@ export const logoutAction = () => {
     type: 'LOG_OUT',
   };
 };
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case 'LOG_IN':

@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import {useSelector} from 'react-redux';
 import {createGlobalStyle} from 'styled-components';
 
+// GUTTER 없애기 
 const Global = createGlobalStyle`
 .ant-row {
   margin-right: 0 !important;
@@ -84,4 +85,5 @@ const AppLayout = ({children}) => {
 AppLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
 export default AppLayout;
