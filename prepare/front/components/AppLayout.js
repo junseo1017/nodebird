@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import {useSelector} from 'react-redux';
 import {createGlobalStyle} from 'styled-components';
 
-// GUTTER 없애기 
+// GUTTER 없애기
 const Global = createGlobalStyle`
 .ant-row {
   margin-right: 0 !important;
@@ -60,7 +60,7 @@ const items = [
 ];
 
 const AppLayout = ({children}) => {
-  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const {isLoggedIn} = useSelector((state) => state.user);
   return (
     <div>
       <Global />

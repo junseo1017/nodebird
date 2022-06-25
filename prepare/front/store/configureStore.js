@@ -3,15 +3,12 @@ import {applyMiddleware, compose, createStore} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import reducer from '../reducers';
 import createSagaMiddleware from 'redux-saga';
-import rootSga from '../sagas';
+import rootSaga from '../sagas';
 
-const loggerMiddleware =
-  ({dispatch, getState}) =>
-  (next) =>
-  (action) => {
-    console.log(action);
-    return next(action);
-  };
+const loggerMiddleware = () => (next) => (action) => {
+  console.log(action);
+  return next(action);
+};
 
 const configureStore = () => {
   const sagaMiddleware = createSagaMiddleware();
