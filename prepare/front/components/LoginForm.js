@@ -15,12 +15,12 @@ const FormWrapper = styled(Form)`
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const {isLoggingIn} = useSelector((state) => state.user);
-  const [id, setId] = useState('');
+  const {logInLoading} = useSelector((state) => state.user);
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const onChangeId = useCallback((e) => {
-    setId(e.target.value);
+  const onChangeEmail = useCallback((e) => {
+    setEmail(e.target.value);
   }, []);
 
   const onChangePassword = useCallback((e) => {
@@ -28,8 +28,8 @@ const LoginForm = () => {
   }, []);
 
   const onSubmitForm = useCallback(() => {
-    dispatch(loginRequestAction({id, password}));
-  }, [id, password]);
+    dispatch(loginRequestAction({email, password}));
+  }, [email, password]);
 
   // const style = useMemo(()=>({marginTop:10}),[]) 이렇게 직접 jsx style을 넣어줄 수 있음
 
@@ -37,17 +37,17 @@ const LoginForm = () => {
     <>
       <FormWrapper onFinish={onSubmitForm}>
         <div>
-          <label htmlFor='user-id'>아이디</label>
+          <label htmlFor='user-email'>이메일</label>
           <br />
-          <Input name='user-id' value={id} onChange={onChangeId} required />
+          <Input name='user-email' type='email' value={email} onChange={onChangeEmail} required />
         </div>
         <div>
-          <label htmlFor='user-id'>비밀번호</label>
+          <label htmlFor='user-password'>비밀번호</label>
           <br />
-          <Input name='user-id' value={password} onChange={onChangePassword} required />
+          <Input name='user-password' value={password} onChange={onChangePassword} required />
         </div>
         <ButtonWrapper>
-          <Button type='primary' htmlType='submit' loading={isLoggingIn}>
+          <Button type='primary' htmlType='submit' loading={logInLoading}>
             로그인
           </Button>
           <Link href='/signup'>

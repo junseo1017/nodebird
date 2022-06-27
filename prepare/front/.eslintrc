@@ -1,4 +1,5 @@
 {
+  "parser": "babel_eslint",
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module", //module 시스템을 쓰겠다는 뜻
@@ -12,6 +13,6 @@
     "node": true, // 노드에서 돌아감
     "es6": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"], // 확장
+  "extends": ["airbnb"], // 확장
   "plugins": ["import", "react-hooks"]
 }
